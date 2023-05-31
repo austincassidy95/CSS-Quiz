@@ -1,0 +1,163 @@
+/*****************************
+CUSTOM PROPERTIES: Change to your own color palette or add your own variables to use in this file 
+******************************/
+:root {
+  --primary: #00a49b;
+  --gray: #dfe0e7;
+  --light-gray: #cdcdcd;
+  --light: #efefef;
+  --dark: #222222;
+}
+
+
+/*****************************
+GLOBAL STYLES
+******************************/
+
+/* These clear out any weird default browser styles. Just ignore this bit. */
+* {
+  margin: 0; 
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+    /*   Base styles for entire page */
+  background-color: var(--gray); /* Referencing Custom Property above. */
+  font-family: sans-serif; 
+  font-size: 18px;
+  color: var(--dark);
+}
+
+/* TYPOGRAPHY */
+h1, h2, h3, h4, h5, h6 {
+  color: var(--dark); /* Color for all headers */
+  margin-bottom: 0.5em; /* Adds a little extra space below headers */
+}
+
+p {
+  margin-bottom: 0.75em;
+}
+
+/* LINKS */
+a {
+  color: var(--primary);
+  text-decoration: none; /* Removes underline from hyperlinks */
+}
+
+/* Hover state for links */
+a:hover {
+  opacity: 0.8;
+}
+
+/*****************************
+GRID AND COMPONENTS
+******************************/
+main {
+  max-width: 1000px; /* Delete this to have the grid container span entire page width */
+  margin: 0 auto; /* Centers the container horizontally within the body. */
+  
+  /*****************************
+  ✨ PRIMARY GRID SETTINGS ✨
+  *****************************/
+  display: grid; 
+  gap: 15px; /* Sets gap between grid-items. */
+  grid-template-columns: repeat(12, 1fr); /* 12 equal columns based on browser width. */
+  grid-template-rows: 
+    200px /* Title */
+    auto  /* Subhead */
+    100px /* Links */
+    auto /* About and Cards */
+    /* Change row sizes based on your content or desired row heights. The "auto" value means the size is determined by the content. That's the default behavior if you decide to delete these entirely */
+ 
+}
+
+/* 👋 TIP: Uncomment the line below (⌘+Slash on Mac) to add an outline on all items on the grid (i.e. dirct children of <main>) and help visualize the size and placement of elements. */
+
+/* main > * { outline: 1px solid red; } */
+
+
+section, .card {
+  padding: 15px;
+  background: var(--light);
+}
+
+.card, .links { list-style: none; } /* Removes bullet points */
+
+
+
+/*****************************
+SPECIFIC ELEMENTS
+******************************/
+
+.site-title { 
+  font-size: 3.5em; /* 1rem = base font size, change to "px" if you prefer) */
+  color: var(--primary);
+  grid-column: span 12; 
+  text-align: center;
+  align-self: center; /* Aligns this element vertically within grid cell */
+  margin-bottom: 0;
+}
+
+.subheading { 
+  grid-column: 4 / 10; 
+  text-align: center;
+  font-size: 1.5rem;
+}
+
+.links { 
+  grid-column: span 12;
+  font-size: 1.25rem;
+  display: flex; /* Displays list horizontally */
+  flex-wrap: wrap; /* Items will wrap if available width changes */
+  justify-content: space-around; /* Distributes space between child elements */
+  align-items: center; /* Centers child elements vertically */
+}
+
+.bio { 
+  grid-column: 2 / 8;
+  grid-row: 4 / 6;
+}
+
+
+/*  This affects both cards */
+.card {
+  grid-column: 8 / 13;
+}
+
+/*  Images within card elements */
+.card img { 
+  background-color: var(--light-gray);
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+
+/*  Note that the footer is not inside the <main> grid */
+footer { 
+  width: 100%;
+  background-color: var(--primary);
+  color: var(--light);
+  font-size: 16px;
+  text-align: center;
+  padding: 20px 0;
+  margin-top: 50px;
+}
+
+
+/*****************************
+ FOR MOBILE DEVICES ONLY:
+ When the browser is smaller than 700px wide,
+ all sections become 12 columns wide (full width).
+ TRY RESIZING YOUR BROWSER TO SEE THIS IN ACTION.
+ ******************************/
+@media (max-width: 700px) {
+  
+  main.container > * {
+    grid-column: span 12;
+    grid-row: unset;
+  }
+  
+  main{ padding: 0 15px;}
+  
+}

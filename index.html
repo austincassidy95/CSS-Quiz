@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+
+    <!-- Change "Landing Page" to your own page title! -->
+    <title>Landing Page</title>
+
+    <!-- Import stylesheet file. -->
+    <link rel="stylesheet" href="styles.css" />
+
+    <!-- Add custom fonts here -->
+  
+  </head>
+
+
+  <body>
+    <!--  👋 PAGE CONTENT BEGINS HERE  -->
+    
+    
+    <main class="container">
+      <!--  Replace any of the content or elements inside <main> with your own stuff. Immediate children of <main> get placed "on the grid" as space is available. -->
+      
+      <h1 class="site-title">Someone Awesome</h1>
+      
+      <p class="subheading">
+        This site is okay, but it's pretty generic. Please give it some personality.
+      </p>
+
+      <ul class="links">
+        <li><a href="#">🙈 I'm a link</a></li>
+        <li><a href="#">🙊 I'm a link</a></li>
+        <li><a href="#">🙉 I'm a link</a></li>
+      </ul>
+
+      <section class="bio">
+        <h2>About me</h2>
+        <p>
+           This section is tall (on larger screens) becasue the two cards to the right are determing the height of the row shared within the grid. So this section is simply filling that vertical space. If you wanted it to be shorter, you could define a height for this section, remove the cards, or change the size of the grid row.
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+          aliquip ex ea commodo consequat.
+        </p>
+        <p>
+          Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
+          dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+          proident, sunt in culpa qui officia deserunt mollit anim id est
+          laborum.
+        </p>
+        <p>
+          Nulla facilisi morbi tempus iaculis urna id. Velit scelerisque in dictum non consectetur a erat nam at. Id semper risus in hendrerit gravida rutrum. Leo urna molestie at elementum eu facilisis sed. Dolor sit amet consectetur adipiscing elit ut. Amet consectetur adipiscing elit duis. Sit amet est placerat in egestas erat imperdiet sed. Elementum nisi quis eleifend quam adipiscing vitae proin sagittis nisl.
+        </p>
+        
+      </section>
+
+      
+         <!-- About the cards: To change the images, upload your own images into project Assets (👈 in left sidebar) and paste their URLs into the src fields.-->
+      
+        <section class="card">
+          <a href="#">
+            <img src="https://cdn.glitch.global/04330931-9ec7-4111-8860-97fb6dc1ff85/placeholder.png?v=1671477944117" alt="Placeholder image of a simplified landscape"/></a>
+          <h2><a href="#">Some Project</a></h2>
+          <p class="card-info">Medium, date, or location</p>
+        </section>
+        
+          <section class="card">
+          <a href="#">
+            <img  src="https://cdn.glitch.global/04330931-9ec7-4111-8860-97fb6dc1ff85/placeholder.png?v=1671477944117" alt="Placeholder image of a simplified landscape"/></a>
+          <h2><a href="#">Some Project</a></h2>
+          <p class="card-info">Medium, date, or location</p>
+        </section>
+
+    
+      
+    </main>
+    <!-- End grid container -->
+    
+    <footer>© Someone awesome, <span id="current-year"></span></footer>
+    
+    
+
+
+    <!-- Includes the Glitch button in the corner to show what the webpage is about and to make it easier for folks to view source and remix -->
+    <div
+      class="glitchButton"
+      style="position: fixed; top: 20px; right: 20px"
+    ></div>
+    <script src="https://button.glitch.me/button.js"></script>
+    
+        <!-- The following bit of Javascript checks the current year and pastes it into the <span> element inside the footer -->
+    <script>
+      let copyright = document.getElementById("current-year");
+      let year = new Date().getFullYear()
+      copyright.innerHTML = year;
+    </script>
+    
+  </body>
+</html>
